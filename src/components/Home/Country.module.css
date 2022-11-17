@@ -1,0 +1,72 @@
+.country0 {
+    -webkit-tap-highlight-color: transparent;
+    width: 17em;
+    height: 21rem;
+    background-color: var(--elements);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
+    transition: box-shadow 0.1s ease-in;
+}
+
+.country {
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    aspect-ratio: 3/4;
+    background-color: var(--elements);
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
+}
+
+
+.country h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1em;
+}
+
+.country h3 {
+    font-size: 0.9rem;
+    margin-right: 0.25em;
+    font-weight: 600;
+}
+
+.country p {
+    font-size: 0.9rem;
+    font-weight: 300;
+
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background-color: rgb(212, 207, 207);
+}
+
+.imageWrapper img {
+    object-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.country:hover {
+    /* transform: scale(1.05); */
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.377);
+}
+
+.detail div {
+    display: flex;
+}
+
+.detail {
+    padding: 1.5em;
+}
+
+.link {
+    text-decoration: none;
+}

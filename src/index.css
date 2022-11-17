@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 98%);
+  --hover: hsl(226, 100%, 87%);
+  --elements: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
+  --theme: '\f185'
+}
+
+[data-theme='dark'] {
+  --background: hsl(207, 26%, 17%);
+  --hover: hsl(207, 26%, 17%);
+  --elements: hsl(209, 23%, 22%);
+  --text: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 100%);
+  --theme: '\f186'
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: Nunito Sans;
+}
+
+#app {
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--background)
+}
+
+h1,
+h2,
+h3,
+p {
+  color: var(--text);
+  margin: 0px;
+}

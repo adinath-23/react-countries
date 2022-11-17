@@ -1,0 +1,35 @@
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.info h2 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    width: 100%;
+}
+
+.info h3 {
+    all: unset;
+    font-weight: 600;
+    margin-right: 0.25rem;
+    color: var(--text);
+}
+
+.info div {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: blueviolet; */
+}
+
+.info div p {
+    /* flex: 1; */
+    font-weight: 500;
+}
+
+@media (max-width: 500px) {
+    .info {
+        grid-template-columns: 1fr;
+    }
+}

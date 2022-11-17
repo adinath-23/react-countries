@@ -1,0 +1,16 @@
+.countries {
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 23%);
+    list-style: none;
+    row-gap: 2em;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 500px) {
+    .countries {
+        grid-template-columns: 1fr;
+    }
+}

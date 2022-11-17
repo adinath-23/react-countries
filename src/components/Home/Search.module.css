@@ -1,0 +1,38 @@
+.search {
+    height: 3.5rem;
+    position: relative;
+    padding: 1rem;
+    color: var(--input);
+    background-color: var(--elements);
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
+    width: 35%;
+    /* width: 100%; */
+    border-radius: 0.5rem;
+}
+
+.search::before {
+
+    position: absolute;
+    left: 2rem;
+    top: 1.2rem;
+    font: var(--fa-font-solid);
+    content: "\f002";
+    vertical-align: bottom;
+}
+
+.search input {
+    all: unset;
+    color: var(--input);
+    width: 80%;
+    margin-left: 4rem;
+}
+
+::placeholder {
+    color: var(--input);
+}
+
+@media (max-width: 500px) {
+    .search {
+        width: 100%;
+    }
+}
