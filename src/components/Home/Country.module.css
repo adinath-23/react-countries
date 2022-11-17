@@ -1,4 +1,4 @@
-.country0 {
+.country1 {
     -webkit-tap-highlight-color: transparent;
     width: 17em;
     height: 21rem;
@@ -11,6 +11,20 @@
 }
 
 .country {
+    -webkit-tap-highlight-color: transparent;
+    /* max-width: fr; */
+    width: 15rem;
+    aspect-ratio: 3/4;
+
+    background-color: var(--elements);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
+    transition: box-shadow 0.1s ease-in;
+}
+
+.country0 {
     -webkit-tap-highlight-color: transparent;
     height: 100%;
     aspect-ratio: 3/4;
