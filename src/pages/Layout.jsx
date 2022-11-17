@@ -19,9 +19,9 @@ const Layout = () => {
   return (
     <div id="app" data-theme={theme ? "dark" : ""} className={styles.header}>
       <header>
-        <h1 onClick={handleClick}>Rest Countries</h1>
+        <h1 onClick={handleClick}>Where in the world?</h1>
         <button onClick={handleTheme} className={styles.toggle}>
-          {theme ? "Dark Mode" : "Light Mode"}
+          {theme ? "Light Mode" : "Dark Mode"}
         </button>
       </header>
       <Outlet context={[fetchedData]} />
