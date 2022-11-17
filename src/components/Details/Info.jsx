@@ -33,11 +33,11 @@ const Info = (props) => {
       </div>
       <div>
         <h3>Top Level Domain:</h3>
-        <p>{props.tld.join(", ")}</p>
+        <p>{props.tld ? props.tld.join(", ") : "None"}</p>
       </div>
       <div>
         <h3>Currencies:</h3>
-        <p>{currencies.join(", ")}</p>
+        <p>{props.currencies && currencies.join(", ")}</p>
       </div>
       <div>
         <h3>Languages:</h3>
