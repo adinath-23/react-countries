@@ -9,6 +9,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     loader: loadCountries,
+    id: "root",
     children: [
       {
         index: true,

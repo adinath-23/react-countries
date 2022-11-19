@@ -22,11 +22,13 @@ const Countries = ({ countries, region, searchTerm }) => {
   if (region !== "All") {
     sortedCountries = filterCountries(region, sortedCountries);
   }
+  if (sortedCountries.length === 0) {
+    return <h2 className={styles.nomatch}>No Match</h2>;
+  }
   const countryList = sortedCountries.map((country) => (
     <Country
       key={country.id}
       id={country.id}
-      image={country.img}
       name={country.name.common}
       flag={country.flag}
       population={country.population}

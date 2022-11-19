@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { Suspense, useState } from "react";
+import { Await, useRouteLoaderData } from "react-router-dom";
 import Countries from "../components/Home/Countires";
 import Filter from "../components/Home/Filter";
 import Search from "../components/Home/Search";
@@ -8,7 +8,7 @@ import styles from "./Home.module.css";
 const Home = () => {
   const [region, setRegion] = useState("All");
   const [searchTerm, setSearchTerm] = useState(null);
-  const [fetchedData] = useOutletContext();
+  const data = useRouteLoaderData("root");
   const handleRegion = (region) => {
     setRegion(region);
   };
@@ -23,11 +23,19 @@ const Home = () => {
         <Search searchCountry={handleSearch} />
         <Filter selectRegion={handleRegion} />
       </div>
-      <Countries
-        countries={fetchedData}
-        region={region}
-        searchTerm={searchTerm}
-      />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Await resolve={data.countries}>
+          {(loadedData) => {
+            return (
+              <Countries
+                countries={loadedData}
+                region={region}
+                searchTerm={searchTerm}
+              />
+            );
+          }}
+        </Await>
+      </Suspense>
     </main>
   );
 };

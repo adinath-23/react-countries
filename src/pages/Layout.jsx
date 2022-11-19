@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet, useLoaderData, useNavigate } from "react-router-dom";
+import { defer, Outlet, useLoaderData, useNavigate } from "react-router-dom";
 import styles from "./Layout.module.css";
 import { getCountries } from "../api/api";
 
@@ -17,7 +17,7 @@ const Layout = () => {
   };
 
   return (
-    <div id="app" data-theme={theme ? "dark" : ""} className={styles.header}>
+    <div data-theme={theme ? "dark" : ""} className={styles.layout}>
       <header>
         <h1 onClick={handleClick}>Where in the world?</h1>
         <button onClick={handleTheme} className={styles.toggle}>
@@ -39,5 +39,5 @@ const Layout = () => {
 export default Layout;
 
 export const loader = () => {
-  return getCountries();
+  return defer({ countries: getCountries() });
 };

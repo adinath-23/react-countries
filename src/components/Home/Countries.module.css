@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.nomatch {
+    /* background-color: aquamarine; */
+    text-align: center;
+}
+
 
 .countries0 {
     margin: 0px;
