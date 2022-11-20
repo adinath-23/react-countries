@@ -30,7 +30,10 @@ const AltFilter = (props) => {
   const dropDownStyle = `${styles.dropdown} ${!isDropdown && styles.visible}`;
   return (
     <div className={styles.filter}>
-      <button onClick={handleButtonClick}>
+      <button
+        onClick={handleButtonClick}
+        className={`${styles.filter} ${isDropdown ? styles.rotate : ""}`}
+      >
         {selectedRegion === "All" ? "Filter by region" : selectedRegion}
       </button>
       <ul className={dropDownStyle}>{options}</ul>

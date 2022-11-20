@@ -8,7 +8,6 @@ const ListWrapper = ({ filteredCountries }) => {
   const [renderList, setRenderList] = useState(
     filteredCountries.slice(0, amount)
   );
-  const [hasMore, setHasMore] = useState(filteredCountries.length <= amount);
 
   const fetchMore = () => {
     setRenderList((pre) => filteredCountries.slice(0, pre.length + amount));
@@ -17,10 +16,6 @@ const ListWrapper = ({ filteredCountries }) => {
   useEffect(() => {
     setRenderList(filteredCountries.slice(0, amount));
   }, [filteredCountries]);
-
-  useEffect(() => {
-    setHasMore(filteredCountries.length - renderList.length >= amount);
-  }, [filteredCountries, renderList]);
 
   if (filteredCountries.length === 0) {
     return <p>No results found</p>;
@@ -40,7 +35,7 @@ const ListWrapper = ({ filteredCountries }) => {
     <InfiniteScroll
       dataLength={countryList.length}
       next={fetchMore}
-      hasMore={hasMore}
+      hasMore={countryList.length !== renderList.length}
       loader={<h4>Loading...</h4>}
     >
       <ul className={styles.countries}>{countryList}</ul>

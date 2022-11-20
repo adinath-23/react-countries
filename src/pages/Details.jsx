@@ -1,10 +1,12 @@
 import { Suspense } from "react";
+
 import {
   Await,
   useNavigate,
   useRouteLoaderData,
   useParams,
 } from "react-router-dom";
+
 import Borders from "../components/Details/Borders";
 import Info from "../components/Details/Info";
 import styles from "./Details.module.css";

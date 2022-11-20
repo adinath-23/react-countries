@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import styles from "./Borders.module.css";
 const Borders = ({ borders }) => {
   const list = borders.map((country) => (
-    <li key={country.id}>
-      <Link to={`/${country.id}`}>{country.name.common}</Link>
-    </li>
+    <Link to={`/${country.id}`} key={country.id}>
+      {country.name.common}
+    </Link>
   ));
   let content = <p>No Borders</p>;
 
