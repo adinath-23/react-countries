@@ -1,42 +1,33 @@
-import Country from "./Country";
-import styles from "./Countries.module.css";
-
-const filterCountries = (region, countries) => {
-  return countries.filter((country) => country.region === region);
-};
-
-const searchCountries = (searchTerm, countries) => {
-  return countries.filter((country) =>
-    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-};
+import { useEffect, useState } from "react";
+import ListWrapper from "./ListWrapper";
 
 const Countries = ({ countries, region, searchTerm }) => {
-  let sortedCountries = countries.sort((a, b) => {
-    return a.name.common > b.name.common ? 1 : -1;
-  });
+  const [filteredCountries, setFiltered] = useState(
+    countries.sort((a, b) => {
+      return a.name.common > b.name.common ? 1 : -1;
+    })
+  );
+  console.log(filteredCountries.length);
+  useEffect(() => {
+    if (searchTerm) {
+      setFiltered(
+        countries.filter((country) =>
+          country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+    }
+  }, [searchTerm]);
+  useEffect(() => {
+    if (region !== "All") {
+      setFiltered(countries.filter((country) => country.region === region));
+    }
+  }, [region]);
 
-  if (searchTerm) {
-    sortedCountries = searchCountries(searchTerm, sortedCountries);
-  }
-  if (region !== "All") {
-    sortedCountries = filterCountries(region, sortedCountries);
-  }
-  if (sortedCountries.length === 0) {
-    return <h2 className={styles.nomatch}>No Match</h2>;
-  }
-  const countryList = sortedCountries.map((country) => (
-    <Country
-      key={country.id}
-      id={country.id}
-      name={country.name.common}
-      flag={country.flag}
-      population={country.population}
-      region={country.region}
-      capital={country.capital}
-    />
-  ));
-  return <ul className={styles.countries}>{countryList}</ul>;
+  return (
+    <>
+      <ListWrapper filteredCountries={filteredCountries} />
+    </>
+  );
 };
 
 export default Countries;

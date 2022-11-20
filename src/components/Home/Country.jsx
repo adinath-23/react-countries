@@ -10,7 +10,7 @@ const Country = (props) => {
             <img
               src={props.flag}
               alt={`flag of ${props.name}`}
-              loading="lazy"
+              // loading="lazy"
             />
           </div>
           <div className={styles.detail}>

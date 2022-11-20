@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
 import Countries from "../components/Home/Countires";
 import Filter from "../components/Home/Filter";
@@ -9,6 +9,7 @@ const Home = () => {
   const [region, setRegion] = useState("All");
   const [searchTerm, setSearchTerm] = useState(null);
   const data = useRouteLoaderData("root");
+
   const handleRegion = (region) => {
     setRegion(region);
   };
