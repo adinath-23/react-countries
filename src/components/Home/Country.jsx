@@ -7,11 +7,11 @@ const Country = (props) => {
       <Link to={`/${props.id}`} className={styles.link}>
         <div className={styles.country}>
           <div className={styles.imageWrapper}>
-            <img
+            {/* <img
               src={props.flag}
               alt={`flag of ${props.name}`}
               // loading="lazy"
-            />
+            /> */}
           </div>
           <div className={styles.detail}>
             <h2>{props.name}</h2>

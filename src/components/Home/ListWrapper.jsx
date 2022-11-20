@@ -9,16 +9,22 @@ const ListWrapper = ({ filteredCountries }) => {
     filteredCountries.slice(0, amount)
   );
   const [hasMore, setHasMore] = useState(filteredCountries.length <= amount);
+
   const fetchMore = () => {
-    console.log("fetching");
-    setHasMore(filteredCountries.length - renderList.length >= amount);
     setRenderList((pre) => filteredCountries.slice(0, pre.length + amount));
   };
 
   useEffect(() => {
-    setHasMore(filteredCountries.length - renderList.length >= amount);
     setRenderList(filteredCountries.slice(0, amount));
   }, [filteredCountries]);
+
+  useEffect(() => {
+    setHasMore(filteredCountries.length - renderList.length >= amount);
+  }, [filteredCountries, renderList]);
+
+  if (filteredCountries.length === 0) {
+    return <p>No results found</p>;
+  }
   const countryList = renderList.map((country) => (
     <Country
       key={country.id}
