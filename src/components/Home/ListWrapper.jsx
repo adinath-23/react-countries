@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Country from "./Country";
 import styles from "./Countries.module.css";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "../utils/Loader";
 
 const amount = 12;
 const ListWrapper = ({ filteredCountries }) => {
@@ -35,8 +36,8 @@ const ListWrapper = ({ filteredCountries }) => {
     <InfiniteScroll
       dataLength={countryList.length}
       next={fetchMore}
-      hasMore={countryList.length !== renderList.length}
-      loader={<h4>Loading...</h4>}
+      hasMore={countryList.length !== filteredCountries.length}
+      loader={<Loader />}
     >
       <ul className={styles.countries}>{countryList}</ul>
     </InfiniteScroll>

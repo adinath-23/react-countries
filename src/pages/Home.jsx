@@ -3,6 +3,7 @@ import { Await, useRouteLoaderData } from "react-router-dom";
 import Countries from "../components/Home/Countires";
 import Filter from "../components/Home/Filter";
 import Search from "../components/Home/Search";
+import Loader from "../components/utils/Loader";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
         <Search searchCountry={handleSearch} />
         <Filter selectRegion={handleRegion} />
       </div>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <Await resolve={data.countries}>
           {(loadedData) => {
             return (

@@ -9,6 +9,7 @@ import {
 
 import Borders from "../components/Details/Borders";
 import Info from "../components/Details/Info";
+import Loader from "../components/utils/Loader";
 import styles from "./Details.module.css";
 
 const Details = () => {
@@ -25,7 +26,7 @@ const Details = () => {
       <div className={styles.header}>
         <button onClick={handleClick}>Go back</button>
       </div>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <Await resolve={data.countries}>
           {(fetchedData) => {
             const currentCountry = fetchedData.find(
