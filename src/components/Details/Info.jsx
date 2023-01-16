@@ -2,11 +2,11 @@ import styles from "./Info.module.css";
 
 const Info = (props) => {
   console.log(props);
-  const languages = Object.values(props.languages);
-  const nativeNames = Object.values(props.name.nativeName).map(
+  const languages = props.languages?Object.values(props.languages):['None'];
+  const nativeNames = props.nativeName?Object.values(props.name.nativeName).map(
     (lang) => lang.common
-  );
-  const currencies = Object.values(props.currencies).map((curr) => curr.name);
+  ):['None'];
+  const currencies = props.currencies?Object.values(props.currencies).map((curr) => curr.name):['None'];
 
   return (
     <div className={styles.info}>
@@ -21,15 +21,15 @@ const Info = (props) => {
       </div>
       <div>
         <h3>Region:</h3>
-        <p>{props.region}</p>
+        <p>{props.region || 'None'}</p>
       </div>
       <div>
         <h3>Sub Region:</h3>
-        <p>{props.subregion}</p>
+        <p>{props.subregion || "None"}</p>
       </div>
       <div>
         <h3>Capital:</h3>
-        <p>{props.capital}</p>
+        <p>{props.capital?props.capital:'None'}</p>
       </div>
       <div>
         <h3>Top Level Domain:</h3>
@@ -37,7 +37,7 @@ const Info = (props) => {
       </div>
       <div>
         <h3>Currencies:</h3>
-        <p>{props.currencies && currencies.join(", ")}</p>
+        <p>{currencies.join(", ")}</p>
       </div>
       <div>
         <h3>Languages:</h3>
