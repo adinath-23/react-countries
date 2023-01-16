@@ -23,7 +23,7 @@
 .search input {
     all: unset;
     color: var(--input);
-    width: 80%;
+    width: 85%;
     margin-left: 4rem;
 }
 
