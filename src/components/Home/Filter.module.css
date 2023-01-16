@@ -33,29 +33,27 @@
 }
 
 .dropdown {
-    all: unset;
     box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.377);
     border-radius: 0.5rem;
     z-index: 1;
+    margin: 0rem;
+    padding: 0rem;
     background-color: var(--elements);
     margin-top: 0.5rem;
     list-style: none;
     position: absolute;
-    width: 100%;
-    padding: 0.5rem 1rem;
+    overflow:hidden;
+    width: 12rem;
     text-align: start;
 }
 
 .dropdown li {
     color: var(--text);
     width: 100%;
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     border-width: 1px;
 }
 
-.dropdown li:not(:first-child) {
-    margin-top: 0.5rem;
-}
 
 .dropdown li:hover {
     background-color: var(--hover);
