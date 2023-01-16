@@ -24,6 +24,11 @@
     background-color: var(--elements);
     border-radius: 0.5rem;
     box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
+    cursor: pointer;
+}
+
+.header button:hover {
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.377);
 }
 
 .header button::before {
