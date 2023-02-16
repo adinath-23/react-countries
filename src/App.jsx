@@ -5,27 +5,27 @@ import Details from "./pages/Details";
 import "./index.css";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    loader: loadCountries,
-    id: "root",
-    children: [
-      {
-        index: true,
-        element: <Home />,
-        errorElement: <p>Error</p>,
-      },
-      {
-        path: "/:country",
-        element: <Details />,
-      },
-    ],
-  },
+	{
+		path: "/",
+		element: <Layout />,
+		loader: loadCountries,
+		id: "root",
+		children: [
+			{
+				index: true,
+				element: <Home />,
+				errorElement: <p>Error</p>,
+			},
+			{
+				path: "/:country",
+				element: <Details />,
+			},
+		],
+	},
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 }
 
 export default App;
