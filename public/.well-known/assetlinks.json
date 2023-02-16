@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.reactcountries.app",
+                 "sha256_cert_fingerprints": ["3D:B1:75:18:4D:6B:A2:DF:15:A6:05:86:2B:CE:98:86:66:A2:E7:9C:7F:91:38:F9:4E:DF:DA:DC:EA:26:73:9C"] }
+  }]
