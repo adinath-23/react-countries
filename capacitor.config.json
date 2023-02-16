@@ -1,0 +1,6 @@
+{
+  "appId": "com.reactcountries.app",
+  "appName": "React Countries",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
