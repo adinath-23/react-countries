@@ -7,6 +7,7 @@
     display: flex;
     padding: 1rem 0rem;
     margin: 2rem 0rem;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
 }

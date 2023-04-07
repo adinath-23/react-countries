@@ -23,10 +23,9 @@ const Layout = () => {
 			if (slug) {
 				navigate(slug);
 			}
-			// If no match, do nothing - let regular routing
-			// logic take over
 		});
 	}, []);
+
 	return (
 		<div data-theme={theme ? "dark" : ""} className={styles.layout}>
 			<header>
