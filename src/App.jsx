@@ -19,6 +19,7 @@ const router = createBrowserRouter([
 			{
 				path: "/:country",
 				element: <Details />,
+				errorElement: <p>Error</p>,
 			},
 		],
 	},

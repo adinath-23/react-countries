@@ -5,12 +5,17 @@ import { getCountries } from "../api/api";
 import { App as CapApp } from "@capacitor/app";
 
 const Layout = () => {
-	const [theme, setTheme] = useState(false);
+	const [theme, setTheme] = useState(
+		JSON.parse(localStorage.getItem("isDarkTheme")) || false
+	);
 	const fetchedData = useLoaderData();
 	const navigate = useNavigate();
 
 	const handleTheme = () => {
-		setTheme((prev) => !prev);
+		setTheme((prev) => {
+			localStorage.setItem("isDarkTheme", !prev);
+			return !prev;
+		});
 	};
 
 	const handleClick = () => {

@@ -7,6 +7,7 @@
 }
 
 .filter button {
+    -webkit-tap-highlight-color: transparent;
     all: unset;
     background-color: var(--elements);
     box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.377);
@@ -20,6 +21,7 @@
 }
 
 .filter button::after {
+    -webkit-tap-highlight-color: transparent;
     position: absolute;
     right: 0%;
     font: var(--fa-font-solid);
@@ -33,6 +35,7 @@
 }
 
 .dropdown {
+    -webkit-tap-highlight-color: transparent;
     box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.377);
     border-radius: 0.5rem;
     z-index: 1;
@@ -48,6 +51,7 @@
 }
 
 .dropdown li {
+    -webkit-tap-highlight-color: transparent;
     color: var(--text);
     width: 100%;
     padding: 0.5rem 1rem;
@@ -56,6 +60,7 @@
 
 
 .dropdown li:hover {
+    -webkit-tap-highlight-color: transparent;
     background-color: var(--hover);
 }
 
